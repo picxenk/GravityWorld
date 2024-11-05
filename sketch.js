@@ -17,7 +17,15 @@ function draw() {
   //   let wind = createVector(0.1, 0);
   //   ball.addForce(wind);
   // }
-
   ball.update();
   ball.show();
+}
+
+
+function mouseClicked() {
+  // let took = createVector();
+  let mPos = createVector(mouseX, mouseY);
+  let took = p5.Vector.sub(ball.pos, mPos);
+  took.mult(0.1);
+  ball.addForce(took);
 }
